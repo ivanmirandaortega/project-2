@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 // replace your database connection string here
-mongoose.connect(process.env.DATABASE_URL,{ 
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true
+  // useCreateIndex: true
 });
 
 const db = mongoose.connection;
