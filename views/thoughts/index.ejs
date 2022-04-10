@@ -1,7 +1,10 @@
 <%- include('../partials/header') %> 
 
 <div>
-    <p>test</p>
+    <form action="/feed" method="POST">
+        <input type="text" name="content" id="" placeholder="What's on your mind?">
+        <input type="submit" id="" value="Share A Thought">
+    </form>
 </div>
 
 <%- include('../partials/footer') %> 
