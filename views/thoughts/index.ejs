@@ -4,8 +4,8 @@
     <a href="/feed/thoughts/new">Share A Thought</a>
     <div>
         <% thought.forEach(t => { %>
+            <div><img src=" <%= t.userAvatar %>" alt="avatar"><%= t.userName %> </div>
             <div><%= t.content %> </div>
-            <div><%= t.userName %> </div>
         <% }) %> 
     </div>
 </section>

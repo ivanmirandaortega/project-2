@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Create your User Model
 const userSchema = new mongoose.Schema({
-    nane: String,
+    name: String,
     googleId: {
         type: String,
         required: true

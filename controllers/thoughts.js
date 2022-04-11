@@ -22,9 +22,9 @@ function newThought(req, res) {
 };
 
 function index(req, res) {
-    // console.log(req.user, ' <- req.user')
+    console.log(req.user, ' <- req.user')
     Thought.find({}, function (err, thought) {
-        console.log(thought, ' <- not sure ')
+        // console.log(thought, ' <- not sure ')
         res.render('thoughts/index', {
             thought,
             title: "Feed"
@@ -33,6 +33,9 @@ function index(req, res) {
 };
 
 function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     const thought = new Thought(req.body)
     thought.save(function (err) {
         if (err) return
