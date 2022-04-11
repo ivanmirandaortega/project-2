@@ -4,18 +4,27 @@ module.exports = {
     index,
     show,
     create,
-    new: newThought
+    new: newThought,
+    edit
 };
 
+// function show(req, res) {
+//     Thought.findById(req.params.id, function (err, thought) {
+//         console.log(thought, ' <- thought')
+//         console.log(req.params.id, ' <- req.params.id')
+//         res.render('thoughts/show', {
+//             thought,
+//             title: "Replies"
+//         })
+//     })
+// };
+
 function show(req, res) {
-    Thought.findById(req.params.id, function (err, thought) {
-        console.log(thought, ' <- thought')
-        res.render('thoughts/index', {
-            thought,
-            title: "Feed"
-        })
+    Thought.findById(req.params.id).populate('replies').exec(function (err, thought) {
+        console.log(thought);
+        res.render('thoughts/show', { title: 'Replies', thought })
     })
-};
+}
 
 function newThought(req, res) {
     res.render('thoughts/new', { title: 'Share A Thought' })
@@ -43,3 +52,21 @@ function create(req, res) {
         res.redirect('/feed')
     })
 };
+
+// function edit(req, res) {
+//     res.render('thoughts/edit', {
+//         thought,
+//         title: "Edit A Thought"
+//     })
+// };
+
+function edit(req, res) {
+    // console.log(user)
+    Thought.findOne({
+        _id: req.params.id,
+        user: req.user._id
+    }, function (err, thought) {
+        if (err || !thought) return
+        res.render('thought/edit', { thought })
+    })
+}

@@ -6,7 +6,8 @@
         <% thought.forEach(t => { %>
             <div><img src=" <%= t.userAvatar %>" alt="avatar"><%= t.userName %> </div>
             <div><%= t.content %> </div>
-        <% }) %> 
+            <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
+        <% }) %>
     </div>
 </section>
 
