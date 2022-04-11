@@ -1,10 +1,15 @@
 <%- include('../partials/header') %> 
 
-<div>
-    <form action="/feed" method="POST">
-        <input type="text" name="content" id="" placeholder="What's on your mind?">
-        <input type="submit" id="" value="Share A Thought">
-    </form>
-</div>
+<section>
+    <a href="/feed/thoughts/new">Share A Thought</a>
+    <div>
+        <% thought.forEach(t => { %>
+            <div><%= t.content %> </div>
+            <div><%= t.userName %> </div>
+        <% }) %> 
+    </div>
+</section>
+
+
 
 <%- include('../partials/footer') %> 
