@@ -9,8 +9,10 @@ router.get('/', isLoggedIn, thoughtsController.index);
 router.get('/thoughts/new', isLoggedIn, thoughtsController.new);
 // GET /feed/#####
 router.get('/thoughts/:id', thoughtsController.show);
-// GET /feed/thoughts/edit
-router.get('/thoughts/edit', thoughtsController.edit);
+// GET /feed/thoughts/#####/edit
+router.get('/thoughts/:id/edit', thoughtsController.edit);
+// PUT /thoughts/######
+router.put('/thoughts/:id', thoughtsController.update);
 // POST /feed
 router.post('/', thoughtsController.create);
 

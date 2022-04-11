@@ -6,6 +6,9 @@
         <% thought.forEach(t => { %>
             <div><img src=" <%= t.userAvatar %>" alt="avatar"><%= t.userName %> </div>
             <div><%= t.content %> </div>
+            <% if (user && user._id.equals(t.user)) { %>
+                <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
+            <% } %>
             <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
         <% }) %>
     </div>

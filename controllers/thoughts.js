@@ -5,7 +5,8 @@ module.exports = {
     show,
     create,
     new: newThought,
-    edit
+    edit,
+    update
 };
 
 // function show(req, res) {
@@ -53,20 +54,19 @@ function create(req, res) {
     })
 };
 
-// function edit(req, res) {
-//     res.render('thoughts/edit', {
-//         thought,
-//         title: "Edit A Thought"
-//     })
-// };
-
 function edit(req, res) {
-    // console.log(user)
-    Thought.findOne({
-        _id: req.params.id,
-        user: req.user._id
-    }, function (err, thought) {
-        if (err || !thought) return
-        res.render('thought/edit', { thought })
+    Thought.findById(req.params.id, function (err, thought) {
+        if (!thought.user.equals(req.user._id)) return
+        res.render('thoughts/edit', { thought, title: "Edit A Thought" })
     })
 }
+
+function update(req, res) {
+    Thought.findById(req.params.id, function (err, thought) {
+        console.log(thought, " <- thought")
+        thought.content = req.body.content
+        console.log(thought.content, ' <- thought.content');
+        thought.save();
+        res.redirect(`/feed`);
+    });
+};

@@ -1,8 +1,10 @@
 <%- include('../partials/header') %> 
 
-<form action="/feed/thoughts/edit" method="POST" autocomplete="off">
-    <input type="text" name="thought">
-    <input type="submit" value="Update Your Thought">
-</form>
+<% if (user && user._id.equals(thought.user)) { %>
+    <form action="/feed/thoughts/<%= thought._id %>?_method=PUT" method="POST">
+    <input type="text" value="<% thought.content %>" name="content">
+    <input type="submit" value="edit">
+    </form>
+<% } %>
 
 <%- include('../partials/footer') %> 
