@@ -8,7 +8,7 @@
     <input type="submit" value="Reply">
 </form>
 
-<% thought.replies?.forEach(r => { %>
+<% thought.replies.reverse().forEach(r => { %>
     <div><%= r.content %></div>
 
 <% }) %> 

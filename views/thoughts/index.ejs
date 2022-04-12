@@ -3,7 +3,7 @@
 <section>
     <a href="/feed/thoughts/new">Share A Thought</a>
     <div>
-        <% thought.forEach(t => { %>
+        <% thought.reverse().forEach(t => { %>
             <div><img src=" <%= t.userAvatar %>" alt="avatar"><%= t.userName %> </div>
             <div><%= t.content %> </div>
             <% if (user && user._id.equals(t.user)) { %>
