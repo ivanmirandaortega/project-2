@@ -1,5 +1,18 @@
 <%- include('../partials/header') %> 
 
-<p>this is where the replies will be</p>
+<div><img src="<%= thought.userAvatar %>" alt="avatar"><%= thought.userName %></div>
+<div><%= thought.content %></div>
+<p>Write A Reply</p>
+<form action="/feed/thoughts/<%= thought._id %>/replies" method="POST">
+    <input type="text" name="content">
+    <input type="submit" value="Reply">
+</form>
+
+<% thought.replies?.forEach(r => { %>
+    <div><%= r.content %></div>
+
+<% }) %> 
+
+
 
 <%- include('../partials/footer') %> 

@@ -1,3 +1,4 @@
+const { type } = require('express/lib/response');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -10,7 +11,8 @@ const thoughtSchema = new Schema({
     userName: String,
     userAvatar: String,
     replies: {
-        type: Schema.Types.ObjectId, ref: 'Reply'
+        type: [Schema.Types.ObjectId],
+        ref: 'Reply'
     }
 });
 

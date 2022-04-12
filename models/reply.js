@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const replySchema = new Schema({
-    thoughtId: {
+    thought: {
         type: Schema.Types.ObjectId, ref: 'Thought'
     },
     content: String,
