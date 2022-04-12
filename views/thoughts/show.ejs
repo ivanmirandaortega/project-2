@@ -12,6 +12,14 @@
     <div><img src="<%= r.userAvatar %>" alt="">
         <div><%= r.userName %></div>
         <div><%= r.content %></div>
+        <% if (user && user._id.equals(r.user)) { %>
+         <div>
+             <form action="/feed/thoughts/<%= thought._id %>/replies/<%= r._id %>?_method=DELETE" method="POST">
+                 
+                <input type="submit" value="x">
+            </form> 
+         </div>
+        <% } %> 
     </div>
 
 <% }) %> 

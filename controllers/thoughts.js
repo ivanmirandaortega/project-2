@@ -22,7 +22,7 @@ module.exports = {
 
 function show(req, res) {
     Thought.findById(req.params.id).populate('replies').exec(function (err, thought) {
-        console.log(thought);
+        // console.log(thought);
         res.render('thoughts/show', { title: 'Replies', thought })
     })
 }
