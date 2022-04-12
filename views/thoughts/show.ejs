@@ -9,7 +9,10 @@
 </form>
 
 <% thought.replies.reverse().forEach(r => { %>
-    <div><%= r.content %></div>
+    <div><img src="<%= r.userAvatar %>" alt="">
+        <div><%= r.userName %></div>
+        <div><%= r.content %></div>
+    </div>
 
 <% }) %> 
 
