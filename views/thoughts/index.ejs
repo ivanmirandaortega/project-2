@@ -8,26 +8,26 @@
     </div>
     <div>
         <% thought.reverse().forEach(t => { %>
-            <div class="card">
+        <div class="card">
                 <div class="row g-0">
-                  <div class="col-md-auto">
-                    <img src="<%= t.userAvatar %>" class="img-fluid" alt="User Avatar" id="avatar">
-                </div>
+                    <div class="col-md-auto">
+                        <img src="<%= t.userAvatar %>" class="img-fluid" alt="User Avatar" id="avatar">
+                    </div>
                 <div class="col-md-auto">
                     <div class="card-body">
-                        <% if (user && user._id.equals(t.user)) { %>
-                            <% } %>
-                            <h5 class="card-title"><%= t.userName %></h5>
-                            <p class="card-text"><%= t.content %></p>
-                            <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
-                        </div>
+                        <h5 class="card-title"><%= t.userName %></h5>
+                        <p class="card-text"><%= t.content %></p>
+                        <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
                     </div>
+                </div>
+                <% if (user && user._id.equals(t.user)) { %>
                     <div class="col-4">
                         <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
                     </div>
+                    <% } %>
                 </div>
-              </div>
-        <% }) %>
+            </div>
+            <% }) %>
     </div>
 </section><br>
 
@@ -44,16 +44,16 @@
                 </div>
                 <div class="col-6">
                     <div class="card-body">
-                        <% if (user && user._id.equals(t.user)) { %>
-                            <% } %>
-                            <h5 class="card-title"><%= t.userName %></h5>
-                            <p class="card-text"><%= t.content %></p>
-                            <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
-                        </div>
+                        <h5 class="card-title"><%= t.userName %></h5>
+                        <p class="card-text"><%= t.content %></p>
+                        <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
                     </div>
+                </div>
+                <% if (user && user._id.equals(t.user)) { %>
                     <div class="col" id="edit">
                         <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
                     </div>
+                    <% } %>
                 </div>
               </div>
         <% }) %>

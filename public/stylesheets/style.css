@@ -52,16 +52,43 @@ body {
   box-shadow: none !important
 }
 
-.btn:active {
-  border: 0;
-  ;
+/* .dropdown-menu[data-bs-popper] {
+  left: -124px;
+} */
+
+#dropdownMenuLink>img {
+  border-radius: 50%;
+  height: 25px;
 }
 
+.nav-avatar {
+  margin-right: 30px;
+}
 
-.btn.btn-secondary:active {
+.dropdown-toggle {
+  border-radius: 25px;
+  padding: 3px;
+}
+
+.dropdown-toggle::after {
+  margin-bottom: -3px;
+  margin-right: 10px;
+}
+
+/* .btn:active {
+  border: 0;
+} */
+
+
+/* .btn.btn-secondary:active {
   outline: none;
   box-shadow: none;
-}
+  margin-top: 9px;
+} */
+
+/* .btn.dropdown-toggle {
+  color: #fff;
+} */
 
 #title {
   font-size: 20px;
@@ -95,7 +122,7 @@ p {
 
 #logout {
   text-decoration: none;
-  color: black;
+  color: #fff;
 }
 
 #share-btn {
@@ -107,4 +134,14 @@ p {
   height: 50px;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.card {
+  background-color: #182025;
+  margin-bottom: 14px;
+}
+
+
+.card-title {
+  color: #fff;
 }
