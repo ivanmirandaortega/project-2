@@ -12,14 +12,14 @@
                 <div class="row g-0">
                   <div class="col-md-auto">
                     <img src="<%= t.userAvatar %>" class="img-fluid" alt="User Avatar" id="avatar">
-                  </div>
-                  <div class="col-md-auto">
+                </div>
+                <div class="col-md-auto">
                     <div class="card-body">
-                      <h5 class="card-title"><%= t.userName %></h5>
+                        <% if (user && user._id.equals(t.user)) { %>
+                          <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
+                      <% } %>
+                        <h5 class="card-title"><%= t.userName %></h5>
                       <p class="card-text"><%= t.content %></p>
-                      <% if (user && user._id.equals(t.user)) { %>
-                        <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
-                    <% } %>
                     <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
                     </div>
                   </div>
@@ -27,7 +27,7 @@
               </div>
         <% }) %>
     </div>
-</section>
+</section><br>
 
 
 
