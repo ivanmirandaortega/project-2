@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  background-color: #081519;
 }
 
 .brand-logo {
@@ -43,7 +44,23 @@ body {
 } */
 
 .bg-light {
-  background-color: white !important;
+  background-color: #081519 !important;
+}
+
+.btn {
+  font-size: .8rem;
+  box-shadow: none !important
+}
+
+.btn:active {
+  border: 0;
+  ;
+}
+
+
+.btn.btn-secondary:active {
+  outline: none;
+  box-shadow: none;
 }
 
 #title {
@@ -63,6 +80,14 @@ body {
 /* #hero>h1 {
   font-size: 40px;
 } */
+
+h1 {
+  color: #fff
+}
+
+p {
+  color: #fff;
+}
 
 #hero>p {
   padding-top: 30vh;

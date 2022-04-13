@@ -16,19 +16,49 @@
                 <div class="col-md-auto">
                     <div class="card-body">
                         <% if (user && user._id.equals(t.user)) { %>
-                          <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
-                      <% } %>
-                        <h5 class="card-title"><%= t.userName %></h5>
-                      <p class="card-text"><%= t.content %></p>
-                    <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
+                            <% } %>
+                            <h5 class="card-title"><%= t.userName %></h5>
+                            <p class="card-text"><%= t.content %></p>
+                            <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
+                        </div>
                     </div>
-                  </div>
+                    <div class="col-4">
+                        <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
+                    </div>
                 </div>
               </div>
         <% }) %>
     </div>
 </section><br>
 
+<section class="container">
+    <div class="d-flex flex-row-reverse">
+        <a href="/feed/thoughts/new" class="btn btn-outline-primary" id="share-btn">Share A Thought</a>
+    </div>
+    <div>
+        <% thought.reverse().forEach(t => { %>
+            <div class="card">
+                <div class="row g-0">
+                  <div class="col">
+                    <img src="<%= t.userAvatar %>" class="img-fluid" alt="User Avatar" id="avatar">
+                </div>
+                <div class="col-6">
+                    <div class="card-body">
+                        <% if (user && user._id.equals(t.user)) { %>
+                            <% } %>
+                            <h5 class="card-title"><%= t.userName %></h5>
+                            <p class="card-text"><%= t.content %></p>
+                            <div><a href="/feed/thoughts/<%= t._id %>">Replies</a></div>
+                        </div>
+                    </div>
+                    <div class="col" id="edit">
+                        <a href="/feed/thoughts/<%= t._id %>/edit">Edit</a>
+                    </div>
+                </div>
+              </div>
+        <% }) %>
+    </div>
+</section><br>
 
 
 <%- include('../partials/footer') %> 
