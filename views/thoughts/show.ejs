@@ -21,8 +21,12 @@
 <div class="container user-login reply">
     <p>Write A Reply</p>
     <form action="/feed/thoughts/<%= thought._id %>/replies" method="POST">
-        <input type="text" name="content">
-        <input type="submit" value="Reply">
+        <div> 
+            <input type="text" name="content" class="form-control" placeholder="Send a reply..">
+            <div class="form-flex">
+                <input type="submit" value="Reply" class="btn btn-primary">
+            </div>
+        </div>
     </form><br>
     <% thought.replies.reverse().forEach(r => { %>
     <div class="card">
