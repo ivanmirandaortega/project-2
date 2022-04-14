@@ -73,17 +73,20 @@ body {
 .dropdown-toggle::after {
   margin-bottom: -3px;
   margin-right: 10px;
+  color: #081519;
 }
 
 ul.dropdown-menu.show {
   background-color: #081519;
   text-align: right;
   min-width: 0;
+  border: none;
+  margin-left: 10px;
 }
 
 a.dropdown-item {
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 a.dropdown-item:hover {
@@ -167,6 +170,16 @@ p {
   margin-bottom: 14px;
 }
 
+
+.col-4 {
+  display: flex;
+  justify-content: right;
+  margin-left: 18vw;
+}
+
+.edit {
+  margin-top: 13px;
+}
 
 .card-title {
   color: #fff;
