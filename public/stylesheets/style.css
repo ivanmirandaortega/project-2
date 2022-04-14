@@ -75,6 +75,22 @@ body {
   margin-right: 10px;
 }
 
+ul.dropdown-menu.show {
+  background-color: #081519;
+  text-align: right;
+  min-width: 0;
+}
+
+a.dropdown-item {
+  color: #fff;
+  font-size: 14px;
+}
+
+a.dropdown-item:hover {
+  background-color: transparent;
+  color: rgb(255, 255, 255, .75);
+}
+
 /* .btn:active {
   border: 0;
 } */
@@ -92,6 +108,16 @@ body {
 
 #title {
   font-size: 20px;
+  display: flex;
+}
+
+/* .btn.btn-outline-primary {
+  padding: 30px;
+} */
+
+#share-btn {
+  padding-left: 10px;
+  width: 170px;
 }
 
 .container-fluid {
@@ -144,4 +170,8 @@ p {
 
 .card-title {
   color: #fff;
+}
+
+.user-login {
+  padding: 80px 100px;
 }
