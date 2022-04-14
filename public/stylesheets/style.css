@@ -185,6 +185,24 @@ p {
   color: #fff;
 }
 
+.card-text {
+  color: #fff;
+}
+
 .user-login {
-  padding: 80px 100px;
+  padding: 80px 100px 0;
+}
+
+.reply {
+  padding-top: 0;
+}
+
+.delete {
+  margin-left: 22vw;
+  margin-top: 1vh;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
 }

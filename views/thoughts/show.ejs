@@ -1,54 +1,49 @@
 <%- include('../partials/header') %> 
 
-<div class="container">
+<div class="container user-login">
+    <div class="d-flex">
+        <h1 class="container" id="title"><%= title %></h1>
+    </div>
     <div class="card">
-        <div class="row">
+        <div class="row g-0">
             <div class="col-md-auto">
                 <img src="<%= thought.userAvatar %>" alt="user avatar" id="avatar">       
             </div>
             <div class="col-md-auto">
                 <div class="card-body">
-                    <div class="card-title">
-                        <%= thought.userName %>
-                    </div>
-                    <div class="card-text">
-                        <%= thought.content %>
-                    </div>
+                    <div class="card-title"><%= thought.userName %></div>
+                    <div class="card-text"><%= thought.content %></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
-    <br><p>Write A Reply</p>
+<div class="container user-login reply">
+    <p>Write A Reply</p>
     <form action="/feed/thoughts/<%= thought._id %>/replies" method="POST">
         <input type="text" name="content">
         <input type="submit" value="Reply">
     </form><br>
     <% thought.replies.reverse().forEach(r => { %>
     <div class="card">
-        <div class="row">
+        <div class="row g-0">
             <div class="col-md-auto">
                 <img src="<%= r.userAvatar %>" alt="user avatar" id="avatar">
             </div>
             <div class="col-md-auto">
                 <div class="card-body">
-                    <div class="card-title">
-                        <%= r.userName %>
-                    </div>
-                    <div class="card-text">
-                        <%= r.content %>
-                        <% if (user && user._id.equals(r.user)) { %>
-                            <div>
-                                <form action="/feed/thoughts/<%= thought._id %>/replies/<%= r._id %>?_method=DELETE" method="POST">
-                                    
-                                <input type="submit" value="x">
-                                </form> 
-                            </div>
-                        <% } %> 
+                    <div class="card-title"><%= r.userName %></div>
+                    <div class="card-text"><%= r.content %>
                     </div>
                 </div>
             </div>
+            <% if (user && user._id.equals(r.user)) { %>
+                <div class="col-4 delete">
+                    <form action="/feed/thoughts/<%= thought._id %>/replies/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="delete-btn"><img src="/images/delete-icon.svg" alt=""></button>
+                    </form> 
+                </div>
+            <% } %> 
         </div>
     </div>
     <% }) %>
