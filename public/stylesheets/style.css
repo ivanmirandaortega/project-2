@@ -13,6 +13,10 @@ body {
   margin-bottom: 10px;
 }
 
+.card-title-text {
+  font-weight: 600;
+}
+
 #search-row form {
   padding-top: 20px;
 }
@@ -123,6 +127,10 @@ a.dropdown-item:hover {
   width: 170px;
 }
 
+.btn-primary {
+  margin-bottom: 10px;
+}
+
 .container {
   padding-left: 0;
   padding-right: 0;
@@ -135,7 +143,7 @@ a.dropdown-item:hover {
 
 #hero {
   text-align: center;
-  padding-top: 40vh;
+  padding-top: 35vh;
 }
 
 /* #hero>h1 {
@@ -148,10 +156,12 @@ h1 {
 
 p {
   color: #fff;
+  margin-bottom: 0;
 }
 
 #hero>p {
-  padding-top: 30vh;
+  padding-top: 35vh;
+  font-size: 0.8rem;
 }
 
 #logout {
@@ -172,7 +182,7 @@ p {
 
 .card {
   background-color: #182025;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .title-flex {
@@ -205,11 +215,15 @@ p {
 }
 
 .user-login {
-  padding: 80px 100px 0;
+  padding: 45px 100px 0;
 }
 
 .reply {
   padding-top: 0;
+}
+
+.reply-text {
+  margin-bottom: 5px;
 }
 
 .form-flex {
