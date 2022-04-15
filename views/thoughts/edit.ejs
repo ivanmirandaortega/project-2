@@ -3,10 +3,10 @@
 <% if (user && user._id.equals(thought.user)) { %>
     <div class="container user-login">
         <form action="/feed/thoughts/<%= thought._id %>?_method=PUT" method="POST">
-        <input type="text" value="<% thought.content %>" name="content" class="form-control" placeholder="Edit your thought...">
-        <div class="form-flex">
-            <input type="submit" value="edit" class="btn btn-primary">
-        </div>
+            <input type="text" value="<% thought.content %>" name="content" class="form-control" placeholder="Edit your thought...">
+            <div class="form-flex">
+                <input type="submit" value="edit" class="btn btn-primary">
+            </div>
         </form>
     </div>
 <% } %>

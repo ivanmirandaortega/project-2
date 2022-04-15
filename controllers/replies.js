@@ -1,25 +1,11 @@
 const Thought = require('../models/thought');
 const Reply = require('../models/reply');
-const { remove } = require('../models/thought');
 
 module.exports = {
     create,
     delete: deleteReply
 }
-
-// function deleteReply(req, res, next) {
-//     Thought.findOne({ 'replies._id': req.params.id }, function (err, thoughtDocument) {
-//         const reply = thoughtDocument.replies.id(req.params.id);
-//         if (!reply.user.equals(req.user._id)) return
-//         reply.remove();
-//         thoughtDocument.save(function (err) {
-//             if (err) next(err);
-//             res.redirect(`/feed/thoughts/${thoughtDocument._id}`)
-//         })
-//     })
-// };
-
-
+// delete reply from user on a user thought 
 function deleteReply(req, res) {
     Thought.findById(req.params.id, function (err, thought) {
         if (!thought || err) return res.redirect(`/feed/thoughts/${thought._id}`)
@@ -32,9 +18,7 @@ function deleteReply(req, res) {
     })
 };
 
-
-
-
+// create a reply from user on a user thought
 function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
@@ -49,16 +33,4 @@ function create(req, res) {
             })
         })
     })
-}
-
-// function create(req, res) {
-//     Thought.findById(req.params.id, function (err, thought) {
-//         req.body.user = req.user._id;
-//         req.body.userName = req.user.name;
-//         req.body.userAvatar = req.user.avatar;
-//         thought.replies.push(req.body);
-//         thought.save(function (err) {
-//             res.redirect(`/feed`)
-//         })
-//     })
-// }
+};

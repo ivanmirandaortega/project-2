@@ -41,13 +41,12 @@
                         <% if (user && user._id.equals(r.user)) { %>
                             <div>
                                 <form action="/feed/thoughts/<%= thought._id %>/replies/<%= r._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="delete-btn"><img src="/images/delete-icon.svg" alt="delete-icon"></button>
+                                    <button type="submit" class="delete-btn"><img src="/images/delete-icon.svg" alt="delete-icon"></button>
                                 </form> 
                             </div>
                         <% } %> 
                     </div>
-                    <div class="card-text"><%= r.content %>
-                    </div>
+                    <div class="card-text"><%= r.content %></div>
                 </div>
             </div>
         </div>

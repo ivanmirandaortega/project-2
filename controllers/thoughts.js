@@ -9,32 +9,21 @@ module.exports = {
     update
 };
 
-// function show(req, res) {
-//     Thought.findById(req.params.id, function (err, thought) {
-//         console.log(thought, ' <- thought')
-//         console.log(req.params.id, ' <- req.params.id')
-//         res.render('thoughts/show', {
-//             thought,
-//             title: "Replies"
-//         })
-//     })
-// };
-
+// shows the replies from a user thought
 function show(req, res) {
     Thought.findById(req.params.id).populate('replies').exec(function (err, thought) {
-        // console.log(thought);
         res.render('thoughts/show', { title: 'Replies', thought })
     })
-}
+};
 
+// takes user to form that submits a new thought
 function newThought(req, res) {
     res.render('thoughts/new', { title: 'Share A Thought' })
 };
 
+// shows all the thoughts from all users
 function index(req, res) {
-    console.log(req.user, ' <- req.user')
     Thought.find({}, function (err, thought) {
-        // console.log(thought, ' <- not sure ')
         res.render('thoughts/index', {
             thought,
             title: "Feed"
@@ -42,33 +31,32 @@ function index(req, res) {
     })
 };
 
+// adds and saves the new user thought 
 function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     req.body.replies = [];
-    console.log(req.body, " <-req.body")
     const thought = new Thought(req.body)
     thought.save(function (err) {
         if (err) return
-        console.log(thought, ' <- this is a new thought')
         res.redirect('/feed')
     })
 };
 
+// takes user to the edit form for a thought
 function edit(req, res) {
     Thought.findById(req.params.id, function (err, thought) {
         if (!thought.user.equals(req.user._id)) return
         res.render('thoughts/edit', { thought, title: "Edit A Thought" })
     })
-}
+};
 
+// updates and saves the edited thought 
 function update(req, res) {
     Thought.findById(req.params.id, function (err, thought) {
-        console.log(thought, " <- thought")
         thought.content = req.body.content
-        console.log(thought.content, ' <- thought.content');
         thought.save();
         res.redirect(`/feed`);
-    });
+    })
 };
