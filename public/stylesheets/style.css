@@ -90,6 +90,11 @@ a.dropdown-item:hover {
   width: 170px;
 }
 
+.btn-secondary {
+  background-color: rgb(255 255 255 / 25%);
+  border-color: rgb(255 255 255 / 25%);
+}
+
 .btn-primary {
   margin-bottom: 10px;
 }
