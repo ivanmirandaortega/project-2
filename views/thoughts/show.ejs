@@ -11,7 +11,9 @@
             </div>
             <div class="col-md-auto">
                 <div class="card-body">
-                    <div class="card-title"><%= thought.userName %></div>
+                    <div class="card-title">
+                        <p class="card-title-text"><%= thought.userName %></p>
+                    </div>
                     <div class="card-text"><%= thought.content %></div>
                 </div>
             </div>
@@ -37,7 +39,7 @@
             <div class="col">
                 <div class="card-body">
                     <div class="card-title title-flex">
-                        <p><%= r.userName %></p>
+                        <p class="card-title-text"<%= r.userName %></p>
                         <% if (user && user._id.equals(r.user)) { %>
                             <div>
                                 <form action="/feed/thoughts/<%= thought._id %>/replies/<%= r._id %>?_method=DELETE" method="POST">
