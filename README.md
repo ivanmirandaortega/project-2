@@ -2,7 +2,7 @@
 
 A platform to share your thoughts. 
 
-This web app allows a user to log in through Google OAuth and post/edit what ever is on their mind. Authorised users can reply and delete their replies to each other user's thoughts.
+This web app allows a user to log in through Google OAuth and post/edit what ever is on their mind. Authorized users can reply and delete their replies to each other user's thoughts.
 
 ## Screenshots: 
 
