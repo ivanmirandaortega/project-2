@@ -175,7 +175,7 @@ p {
 
 #avatar {
   border-radius: 50%;
-  height: 50px;
+  height: 35px;
   margin-left: 10px;
   margin-top: 10px;
 }
@@ -202,16 +202,37 @@ p {
   margin-top: 13px;
 }
 
+.card-body {
+  padding: .5rem .7rem;
+}
+
 .card-title {
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 0;
 }
 
 .card-text {
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 0;
+}
+
+.comment-icon {
+  height: 20px;
+}
+
+.icon-flex {
+  display: flex;
+}
+
+.heart-icon {
+  margin-left: 25px;
+  height: 15px;
+}
+
+.likes {
+  margin-left: 15px;
 }
 
 .user-login {
@@ -224,6 +245,7 @@ p {
 
 .reply-text {
   margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .form-flex {
@@ -242,7 +264,7 @@ p {
   color: #fff;
   box-shadow: none !important;
   border-color: rgb(255, 255, 255, .25);
-
+  font-size: 12px;
 }
 
 .delete {

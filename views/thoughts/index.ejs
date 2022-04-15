@@ -23,13 +23,15 @@
                             <p class="card-title-text"><%= t.userName %></p>
                             <% if (user && user._id.equals(t.user)) { %>
                             <div class="edit-flex">
-                                <a href="/feed/thoughts/<%= t._id %>/edit" class="edit"><img src="/images/edit-icon.svg" alt="edit icon" data-bs-toggle="modal" data-bs-target="#exampleModal"></a>
+                                <a href="/feed/thoughts/<%= t._id %>/edit" class="edit"><img src="/images/edit-icon.svg" alt="edit icon"></a>
                             </div>
                             <% } %>
                         </div>
                         <p class="card-text"><%= t.content %></p>
-                        <div>
-                            <a href="/feed/thoughts/<%= t._id %>"><img src="/images/comment-icon.svg" alt="comment icon"></a>
+                        <div class="icon-flex">
+                            <a href="/feed/thoughts/<%= t._id %>"><img src="/images/comment-icon.svg" alt="comment icon" class="comment-icon"></a>
+                            <a href=""><img src="/images/heart-icon.svg" alt="heart icon" class="heart-icon"></a>
+                            <p class="likes">1</p>
                         </div>
                     </div>
                 </div>
