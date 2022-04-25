@@ -30,4 +30,4 @@ This web app allows a user to log in through Google OAuth and post/edit what eve
 ## Next Steps:
 - As a user, I want to like other user's thoughts 
 - As a user, I want to upload media files 
-- As a user, I want to search for other users
+- As a user, I want to search for other users 
