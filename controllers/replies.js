@@ -11,8 +11,6 @@ function deleteReply(req, res) {
         if (!thought || err) return res.redirect(`/feed/thoughts/${thought._id}`)
         thought.replies.remove(req.params.reply_id)
         thought.save(function (err) {
-            console.log(err, ' <-err')
-            console.log(thought, ' <-thought')
             res.redirect(`/feed/thoughts/${thought._id}`)
         })
     })
@@ -24,9 +22,7 @@ function create(req, res) {
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     Thought.findById(req.params.id, function (err, thought) {
-        // console.log(thought)
         Reply.create(req.body, function (err, reply) {
-            console.log(reply, ' <-reply')
             thought.replies.push(reply)
             thought.save(function (err) {
                 res.redirect(`/feed/thoughts/${thought._id}`)
