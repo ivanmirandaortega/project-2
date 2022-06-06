@@ -238,3 +238,16 @@ p {
   background-color: transparent;
   border: none;
 }
+
+@media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+      .navbar {
+        padding: 20px;
+      }
+
+      .user-login {
+        padding: 4vw 3vh 0;
+      }
+    }
