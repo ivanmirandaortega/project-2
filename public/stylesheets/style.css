@@ -256,12 +256,16 @@ p {
       }
 
       .card-text {
-        margin-top: 7px;
+        margin-top: 5px;
         font-size: 13px;
       }
 
       .col-md-auto {
         width: 14%;
+      }
+
+      .edit-icon {
+        height: 12px;
       }
 
     }
